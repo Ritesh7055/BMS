@@ -3,7 +3,6 @@ function searchDonors() {
   const city = document.getElementById("searchCity").value.toLowerCase();
   const resultsDiv = document.getElementById("results");
 
-
   const donors = JSON.parse(localStorage.getItem("donors")) || [];
 
   const filtered = donors.filter(d =>
@@ -14,31 +13,18 @@ function searchDonors() {
   resultsDiv.innerHTML = "";
 
   if (filtered.length === 0) {
-    resultsDiv.innerHTML = `
-        <div class="card">
-            <h3>No donors found 😔</h3>
-            <p>Try another city or blood group</p>
-        </div>
-        `;
-
+    resultsDiv.innerHTML = "<p>No donors found 😔</p>";
     return;
   }
 
   filtered.forEach(donor => {
     resultsDiv.innerHTML += `
-        <div class="card">
-            <h3>${donor.name}</h3>
-            <span class="badge">${donor.bloodGroup}</span>
-            <p>📍 ${donor.city}</p>
-            <p>📞 ${donor.phone}</p>
-        </div>
-        `;
-
+      <div class="card">
+        <h3>${donor.name}</h3>
+        <p>Blood: ${donor.bloodGroup}</p>
+        <p>City: ${donor.city}</p>
+        <p>Phone: ${donor.phone}</p>
+      </div>
+    `;
   });
 }
-
-
-
-
-
-
