@@ -80,3 +80,25 @@ const donors = [
 
   });
 }
+
+
+
+
+
+
+const resultsDiv = document.getElementById("donors");
+
+// Loop through donors and display cards
+donors.forEach(donor => {
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  card.innerHTML = `
+    <h3>${donor.name}</h3>
+    <span class="badge">${donor.bloodGroup}</span>
+    <p>📍 ${donor.city}</p>
+    <p>📞 ${donor.phone}</p>
+  `;
+
+  resultsDiv.appendChild(card);
+});
