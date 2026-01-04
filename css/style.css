@@ -1,0 +1,259 @@
+/* =====================
+   GLOBAL RESET & THEME
+===================== */
+:root {
+  --primary: #ff4d4d;
+  --primary-dark: #e63b3b;
+  --bg: #f7f8fc;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --radius: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI";
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--card);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.navbar h2 {
+  color: var(--primary);
+  font-size: 22px;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 22px;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  position: relative;
+  padding: 4px 0;
+}
+
+.navbar nav a.active {
+  color: var(--primary);
+}
+
+.navbar nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+.hero {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  margin-bottom: 12px;
+}
+
+.hero p {
+  max-width: 500px;
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* =====================
+   PAGE HEADINGS
+===================== */
+h2 {
+  text-align: center;
+  margin: 32px 0 20px;
+  font-size: 28px;
+}
+
+/* =====================
+   FORMS
+===================== */
+form {
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+  background: var(--card);
+  padding: 26px;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  font-size: 16px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+/* =====================
+   SEARCH + RESULTS
+===================== */
+#results {
+  margin-top: 24px;
+}
+
+/* =====================
+   DONOR CARD
+===================== */
+.card {
+  background: var(--card);
+  max-width: 420px;
+  margin: 16px auto;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  position: relative;
+  animation: fadeUp 0.4s ease;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 4px 0;
+}
+
+/* Blood badge */
+.badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--primary);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Empty state */
+.card.empty {
+  text-align: center;
+  color: var(--muted);
+}
+
+/* =====================
+   ANIMATIONS
+===================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   MOBILE OPTIMIZATION
+===================== */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  form {
+    padding: 22px;
+  }
+}

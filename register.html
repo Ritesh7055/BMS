@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register Donor</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+  <h2>🩸 BloodCare</h2>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="search.html">Find Donor</a>
+    <a href="register.html">Donate</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>
+
+<script src="js/navbar.js"></script>
+
+
+<h2>Become a Blood Donor 🩸</h2>
+
+<form id="donorForm">
+  <input type="text" id="name" placeholder="Full Name" required>
+
+  <select id="bloodGroup" required>
+    <option value="">Select Blood Group</option>
+    <option>A+</option>
+    <option>A-</option>
+    <option>B+</option>
+    <option>B-</option>
+    <option>O+</option>
+    <option>O-</option>
+    <option>AB+</option>
+    <option>AB-</option>
+  </select>
+
+  <input type="text" id="city" placeholder="City" required>
+  <input type="tel" id="phone" placeholder="Phone Number" required>
+
+  <button type="submit">Register</button>
+</form>
+
+<script src="js/register.js"></script>
+</body>
+</html>

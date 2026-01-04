@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find Blood</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+  <h2>🩸 BloodCare</h2>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="search.html">Find Donor</a>
+    <a href="register.html">Donate</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>
+
+<script src="js/navbar.js"></script>
+
+
+<h2>Find Blood Donors 🔍</h2>
+
+<select id="searchBlood">
+  <option value="">Select Blood Group</option>
+  <option>A+</option>
+  <option>A-</option>
+  <option>B+</option>
+  <option>B-</option>
+  <option>O+</option>
+  <option>O-</option>
+  <option>AB+</option>
+  <option>AB-</option>
+</select>
+
+<input type="text" id="searchCity" placeholder="City">
+<button onclick="searchDonors()">Search</button>
+
+<div id="results"></div>
+
+<script src="js/search.js"></script>
+</body>
+</html>
