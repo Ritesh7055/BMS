@@ -86,7 +86,7 @@ const donors = [
 
 
 
-const resultsDiv = document.getElementById("donors");
+const resultsDiv = document.getElementById("results");
 
 // Loop through donors and display cards
 donors.forEach(donor => {
