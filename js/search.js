@@ -3,50 +3,6 @@ function searchDonors() {
   const city = document.getElementById("searchCity").value.toLowerCase();
   const resultsDiv = document.getElementById("results");
 
-// Dummy donor data
-const donors = [
-  {
-    name: "Nikhil Goswami",
-    bloodGroup: "AB+",
-    city: "jhalawar",
-    phone: "8619317677"
-  },
-  {
-    name: "Ritesh Meena",
-    bloodGroup: "AB+",
-    city: "jhalawar",
-    phone: "9521367055"
-  },
-  {
-    name: "Aman Verma",
-    bloodGroup: "O-",
-    city: "Kolkata",
-    phone: "9988776655"
-  },
-  {
-    name: "Neha Patel",
-    bloodGroup: "AB+",
-    city: "Bangalore",
-    phone: "9871122334"
-  },
-  {
-    name: "Aditya Kapoor",
-    bloodGroup: "A-",
-    city: "Chennai",
-    phone: "9900112233"
-  },
-  {
-    name: "Sneha Reddy",
-    bloodGroup: "B-",
-    city: "Hyderabad",
-    phone: "9812345678"
-  }
-];
-
-
-
-
-
 
   const donors = JSON.parse(localStorage.getItem("donors")) || [];
 
